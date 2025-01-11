@@ -1,7 +1,11 @@
 name = "url-shortener"
 compatibility_date = "2025-01-11"
 
+[site]
+bucket = "./public"
+entry-point = "functions"
+
 [[kv_namespaces]]
 binding = "URLS"
 id = "1808f1d71b494d3d9252964cbd209e15"
-preview_id = "1808f1d71b494d3d9252964cbd209e15" # Optional for local preview
+preview_id = "1808f1d71b494d3d9252964cbd209e15"
