@@ -9,10 +9,11 @@ export const onRequestPost = async ({ request, env }) => {
     // Generate a short ID
     const shortId = generateShortId();
 
-    // Save to KV Storage
+    // Save the mapping in KV storage
     await env.URLS.put(shortId, longUrl);
 
-    const shortenedUrl = `https://${request.headers.get('host')}/${shortId}`;
+    // Generate the custom shortened URL
+    const shortenedUrl = `https://hyprix.pages.dev/urlshort/${shortId}`;
     return new Response(JSON.stringify({ shortenedUrl }), {
       status: 201,
       headers: { 'Content-Type': 'application/json' },
